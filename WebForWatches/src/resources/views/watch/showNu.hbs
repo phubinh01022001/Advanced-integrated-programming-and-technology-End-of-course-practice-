@@ -1,0 +1,27 @@
+<div class='mt-4' style="padding-top: 50px;">
+  <div class="bk" style="">
+    <img src="https://cdn.shopify.com/s/files/1/1128/6670/collections/ALL_Ladies_Bike_2048x2048.jpg?v=1586999051">
+  </div>
+  
+  <div class='row mt-4'>
+
+    {{#each watch}}
+      <div class='col-sm-6 col-lg-4'>
+        <div class='card card-couser-item'>
+          <a href='/watchs/{{this.slug}}'>
+            <img src='{{this.image}}' class='card-img-top' alt='{{this.image}}'/>
+          </a>
+          <div class='card-body'>
+            <a href='/watchs/{{this.slug}}'>
+              <h5 class='card-text'>{{this.name}}</h5>
+            </a>
+            <p class='card-text'>{{this.description}}</p>
+            <p class='card-text'><b>Giá:</b> {{this.price}} vnđ</p>
+            <a href='/watchs/{{this.slug}}' class='btn btn-primary'>Xem</a>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+
+  </div>
+</div>

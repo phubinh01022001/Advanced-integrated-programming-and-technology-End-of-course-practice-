@@ -1,0 +1,85 @@
+<div class="mt-4" style="padding-top: 40px;">
+    <div>
+      <h3>Sản phẩm của tôi</h3>
+      {{!-- {{#if deletedCount}} --}}
+      <a href="/me/trash/watchs">Trùng rác ({{deletedCount}})</a>
+      {{!-- {{/if}} --}}
+    </div>
+    <table class="table mt-4">
+        <thead> 
+            <tr>
+                <th scope="col">STT</th>
+                <th scope="col">Tên đồng hồ</th>
+                <th scope="col">Loại </th>
+                <th scope="col">Mô tả</th>
+                <th scope="col">Giá</th>
+                <th scope="col">Thời gian tạo</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each watchs}}
+            <tr>
+                <th scope="row">{{sum @index 1}}</th>
+                <td>{{this.name}}</td>
+                <td>{{this.type}}</td>
+                <td>{{this.description}}</td>
+                <td>{{this.price}}</td>
+                <td>{{this.createdAt}}</td>
+                <td>
+                  <a href="/watchs/{{this._id}}/edit" class="btn btn-success">Sửa</a>  
+                </td>
+                <td>
+                  <button class="btn btn-danger" data-bs-toggle="modal" data-id="{{this._id}}" data-bs-target="#delete-watch">Xóa</button>
+                </td>
+            </tr>
+            {{else}}
+            <tr>
+              <td colspan="5" class="text-center">Bạn chưa đăng sản phẩm nào
+                <a href="/watchs/create"> Đăng sản phẩm</a>
+              </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+{{!-- Confirm delete --}}
+<div class="modal fade" id="delete-watch" tabindex="-1" aria-labelledby="delete-watch-label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><h4><b>Xóa khóa học</b></span></h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Bạn chắc chắn muốn xóa?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+        <button id="btn-delete" type="button" class="btn btn-danger">Xóa bỏ</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<form name="delete-form" method="post"></form>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    var watchId;
+    var deleteForm = document.forms['delete-form'];
+    var btnDelete = document.getElementById('btn-delete');
+
+    // when dialog confirm clicked
+    $('#delete-watch').on('show.bs.modal', function(event){
+        var button = $(event.relatedTarget);
+        watchId = button.data('id');
+    });
+
+    btnDelete.onclick = function () {
+        deleteForm.action = '/watchs/' + watchId + '?_method=delete';
+        deleteForm.submit();
+    };
+</script>

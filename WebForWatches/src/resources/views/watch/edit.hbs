@@ -1,0 +1,27 @@
+<div class='mt-4'  style="padding-top: 40px;">
+  <h3>Sửa khóa học</h3>
+  {{! VIDEO 28 PHÚT THỨ 24'24s }}
+  <form method='post' action='/watchs/{{watch._id}}?_method=PUT'>
+    <div class='mb-3 mt-5'>
+      <label for='name' class='form-label'>Tên sản phẩm</label>
+      <input type='text' class='form-control' value='{{watch.name}}' id='name' name='name'/>
+    </div>
+    <div class='mb-3'>
+      <label for='type' class='form-label'>Loại</label>
+      <input type='text' class='form-control' value='{{watch.type}}' id='price' name='type'/>
+    </div>
+    <div class='mb-3'>
+      <label for='description' class='form-label'>Mô tả </label>
+      <textarea class='form-control' id='description' name='description'>{{watch.description}}</textarea>
+    </div>
+    <div class='mb-3'>
+      <label for='price' class='form-label'>Giá</label>
+      <input type='number' class='form-control' value='{{watch.price}}' id='price' name='price'/>
+    </div>
+    <div class='mb-3'>
+      <label for='imageID' class='form-label'>ID ảnh</label>
+      <input type='text' class='form-control' value='{{watch.imageID}}' id='imageID' name='imageID'/>
+    </div>
+    <button type='submit' class='btn btn-primary'>Upload</button>
+  </form>
+</div>

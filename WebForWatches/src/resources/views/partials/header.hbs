@@ -1,0 +1,123 @@
+<div class="main-header-wrapper  sticky-header" id="mobile-sticky-header head" style="top: 0px; width: 100%; position: fixed;">
+  <header class="main-header" role="banner">
+
+    <div class="branding">
+        <a class="logo has-retina" href="/">
+          <img class="logo-regular" alt="WatchB - International Website" src="https://seeklogo.com/images/W/Watch_Your_Watches-logo-B511B54337-seeklogo.com.png" data-regular="https://seeklogo.com/images/W/Watch_Your_Watches-logo-B511B54337-seeklogo.com.png">_______
+            <img class="logo-retina" alt="WatchB - International Website" src="https://seeklogo.com/images/W/Watch_Your_Watches-logo-B511B54337-seeklogo.com.png" data-retina="https://seeklogo.com/images/W/Watch_Your_Watches-logo-B511B54337-seeklogo.com.png">
+        </a>
+    </div>
+
+    <nav class="navigation below-header">
+      <ul class="primary">
+        <li class="has-dropdown simple-dropdown">
+            <a class="main-nav-item" href="/watchs/showNam"><span>Đồng hồ nam</span></a>
+              <ul class="secondary">
+                  <li class=" hover-link">
+                      <a href="">Loại 1</a>
+                  </li>
+                  <li class=" hover-link">
+                      <a href="">Loại 2</a>
+                  </li>
+                  <li class=" hover-link">
+                      <a href="">Loại 3</a>
+                  </li>
+              </ul>
+        </li>
+        <li class="has-dropdown simple-dropdown">
+            <a class="main-nav-item" href="/watchs/showNu"><span>Đồng hồ nữ</span></a>
+              <ul class="secondary">
+                  <li class=" hover-link">
+                      <a href="">Thương hiệu a</a>
+                  </li>
+                  <li class=" hover-link">
+                      <a href="">Thương hiệu b</a>
+                  </li>
+              </ul>
+        </li>
+        <li class="has-dropdown simple-dropdown">
+            <a class="main-nav-item" href="/watchs/showTreEm"><span>Đồng hồ trẻ em</span></a>
+              <ul class="secondary">
+                  <li class=" hover-link">
+                      <a href="">Bé nam</a>
+                  </li>
+                  <li class=" hover-link">
+                      <a href="">Bé gái</a>
+                  </li>
+              </ul>
+        </li>
+        <li class="retailers">
+            <a class="main-nav-item" href="/introduce"><span>Giới thiệu</span></a>
+        </li>
+        <li>
+          <div class="container-fluid" style="width: 300px">
+            <form class="d-flex" action="/search" method="post">
+              <input name="search" class="form-control me-2" type="text" placeholder="Search" aria-label="Search">
+            </form>
+          </div>  
+        </li>
+         
+      </ul>
+    </nav>
+
+    
+
+    <nav class="navbar navbar-expand-lg navbar-light " style="float: right; padding-top: 20px">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/account/resgister">
+                <ion-icon name="person-add-outline"></ion-icon>
+                Đăng kí</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/account/login">
+                <ion-icon name="log-in-outline"></ion-icon>
+                Đăng nhập</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <ion-icon name="person-circle-outline"></ion-icon>
+                Welcome {{user.username}} !
+              </a>
+              <ul class='dropdown-menu user' aria-labelledby='navbarDropdown'>
+                <li><a class='dropdown-item' href='/account/profile'>
+                  <ion-icon name="person-outline"></ion-icon>
+                  Thông tin cá nhân</a></li>
+                <li><hr class=''></li>
+                <li><a class='dropdown-item' href='/watchs/create'>
+                  <ion-icon name="medkit-outline"></ion-icon>
+                  Đăng sản phẩm </a></li>
+                <li><hr class=''></li>
+                <li><a class='dropdown-item' href='/me/stored/watchs'>
+                  <ion-icon name="bag-handle-outline"></ion-icon>
+                  Danh sách </a></li>
+                <li><hr class=''></li>
+                <li><a class='dropdown-item' href='#'>
+                  <ion-icon name="log-out-outline"></ion-icon>  
+                  Đăng xuất</a></li>
+              </ul>  
+            </li>
+          </ul>
+        </div>
+      </div>
+  </nav>
+
+  </header>
+      
+</div>
+
+<style>
+  ul:hover li ul.user{
+    position:absolute;
+    top: 20px !important;
+    right: -150px;
+  }
+  ul:hover li ul.user li{
+    position:relative;
+  }
+  ul:hover li ul.user li a{
+    background-color: rgb(255, 255, 255);
+  }
+</style>
